@@ -29,7 +29,12 @@ const NavBar = () => {
         marginRight: '70px',
       }}
       >
-        <li style={{color: 'black', marginRight: '20px', cursor:"pointer"}}>Projects</li>
+        <li style={{color: 'black', marginRight: '20px', cursor:"pointer"}}
+        ><a
+        href="https://github.com/SaiPalkonda"
+        style={{textDecoration: 'none', color: 'black'}}
+        >Projects
+          </a></li>
         <li style={{color: 'black', marginRight: '20px', cursor:"pointer"}}>Contact</li>
       </ul>
         

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 
-const Exp = () => {
+const Exp = ({title, period, role, discription}) => {
      const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     
       useEffect(() => {
@@ -21,14 +21,15 @@ const limitedText = fullText.split(' ').slice(0, 40).join(' ') + '...';
     style={{
         height: isMobile?'auto':'auto',
         maxHeight: isMobile?'auto':'45vh',
-        width: isMobile?'90%':'25vw',
+        width: isMobile?'90%':'22vw',
         backgroundColor: 'white',
         // border: '1px solid black',
         // display: 'flex',
         // justifyContent: 'center',
         // alignItems: 'center',
         marginTop: '10px',
-        padding: '18px'
+        padding: '18px',
+        borderRadius: '10px',
         
     }}
     >
