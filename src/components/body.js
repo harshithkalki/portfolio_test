@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Exp from './exp';
 
 const Body = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -14,6 +15,7 @@ const Body = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   return (
+    <div>
     <div
       style={{
         height: isMobile ? 'auto' : '45vh',
@@ -72,6 +74,7 @@ const Body = () => {
           </p>
         </div>
       </div>
+      {/* Responsive image container */}
       <div
         style={{
           width: isMobile ? '100%' : '40%',
@@ -98,6 +101,57 @@ const Body = () => {
         />
       </div>
     </div>
+    {/* <div
+    style={{
+        height: '45vh',
+        width: isMobile?'95%':'25vw',
+        backgroundColor: 'white',
+       
+    }}
+    >
+      <Exp />
+    </div> */}
+    <div
+    style={{
+        marginTop: '20px',
+        width:'100%',
+        height: isMobile?'auto':'10vh',
+        textAlign: 'center',
+        fontSize: isMobile?'30px':'40px',
+        fontWeight: 'bold',
+        fontFamily: 'Arial, sans-serif',
+        color: 'black',
+        padding: '10px',
+        marginBottom: '20px',
+    }}
+    >
+        MY EXPERIENCE
+
+    </div>
+    <div
+    style={{
+        display: 'grid',
+        width:isMobile?'100%':'90%',
+        margin:'auto',
+        height:'auto',
+        padding: '10px',
+        backgroundColor:'#EDF7FA',
+        gridTemplateColumns:isMobile?'1fr': 'repeat(3, 1fr)',
+        gap: '20px',
+        
+    }}
+    >
+        <Exp />
+        <Exp />
+        <Exp />
+        <Exp />
+        <Exp />
+        <Exp />
+
+    </div>
+    
+    </div>
+
   );
 };
 
