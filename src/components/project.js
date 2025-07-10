@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 
-const Exp = ({title, period, role, discription}) => {
+const Project = ({title, period, role, discription}) => {
      const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     
       useEffect(() => {
@@ -15,13 +15,14 @@ const Exp = ({title, period, role, discription}) => {
 
       const fullText = "Java developer with experience in building efficient, scalable applications using core Java and frameworks like Spring. Passionate about clean code and problem-solving.with experience in building efficient, scalable applications using core Java and frameworks like Spring. Passionate about clean code and problem-solving.with experience in building efficient, scalable applications using core Java and frameworks like Spring. Passionate about clean code and problem-solving.";
 
-const limitedText = fullText.split(' ').slice(0, 40).join(' ') + '...';
+// const limitedText = fullText.split(' ').slice(0, 50).join(' ') + '...';
+const limitedText= fullText;
   return (
     <div
     style={{
         height: isMobile?'auto':'auto',
         maxHeight: isMobile?'auto':'45vh',
-        width: isMobile?'90%':'22vw',
+        width: isMobile?'90%':'60vw',
         backgroundColor: 'white',
         // border: '1px solid black',
         // display: 'flex',
@@ -43,7 +44,7 @@ const limitedText = fullText.split(' ').slice(0, 40).join(' ') + '...';
 
         }}
         >
-            Experience as a Java Developer at TCS, Hyderabad, India
+            Fullstack_Ecommers_Project
         </p>
 
         <div
@@ -52,7 +53,7 @@ const limitedText = fullText.split(' ').slice(0, 40).join(' ') + '...';
             height:'10%',
             display: 'flex',
             flexDirection: 'row',
-            justifyContent: 'space-between',
+            // justifyContent: 'space-between',
             alignItems: 'center',
             marginTop: '10px',
             fontSize: '15px',
@@ -62,9 +63,9 @@ const limitedText = fullText.split(' ').slice(0, 40).join(' ') + '...';
             textAlign: 'justify',
         }}
         >
-            <p>2002 - 2005</p>|
+            {/* <p>2002 - 2005</p> */}
             <p>
-                Java Developer
+                Java, Spring Boot, React, MySQL, AWS
             </p>
         </div>
         <p
@@ -87,4 +88,4 @@ const limitedText = fullText.split(' ').slice(0, 40).join(' ') + '...';
   )
 }
 
-export default Exp
+export default Project

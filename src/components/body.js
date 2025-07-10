@@ -2,10 +2,14 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Exp from './exp';
+import Project from './project';
 
-const Body = () => {
+const Body = ({ refs }) => {
+    const { section1Ref, section2Ref, section3Ref } = refs;
     const [isHovered, setIsHovered] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,7 +19,9 @@ const Body = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   return (
-    <div>
+    <div
+      ref={section1Ref}
+    >
     <div
       style={{
         height: isMobile ? 'auto' : '45vh',
@@ -91,7 +97,7 @@ const Body = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           style={{
-            border: '18px solid #a9e9f5',
+            border: '18px solid #9AA6B2',
             height: isMobile ? '70vw' : '70%',
             borderRadius: '50%',
             transition: 'transform 0.3s ease',
@@ -112,6 +118,7 @@ const Body = () => {
       <Exp />
     </div> */}
     <div
+    ref={section2Ref}
     style={{
         marginTop: '20px',
         width:'100%',
@@ -136,7 +143,7 @@ const Body = () => {
         height:'auto',
         padding: '20px',
         paddingLeft:'25px',
-        backgroundColor:'#b8f2fc',
+        backgroundColor:'#BCCCDC',
         gridTemplateColumns:isMobile?'1fr': 'repeat(3, 1fr)',
         gap: '15px',
         borderRadius: '10px',
@@ -152,8 +159,9 @@ const Body = () => {
 
     </div>
     <div
+    ref={section3Ref}
     style={{
-        marginTop: '20px',
+        marginTop: '25px',
         width:'100%',
         height: isMobile?'auto':'10vh',
         textAlign: 'center',
@@ -162,15 +170,31 @@ const Body = () => {
         fontFamily: 'Arial, sans-serif',
         color: 'black',
         padding: '10px',
-        marginBottom: '20px',
+        marginBottom: '10px',
     }}
     >
         My Projects
 
+    </div>
+    <div
+    style={{
+        // height: '45vh',
+        width: isMobile?'95%':'100vw',
+        backgroundColor: 'white',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+       
+    }}
+    >
+      <Project />
+      <Project />
+      <Project />
     </div>
     </div>
 
   );
 };
 
-export default Body
+export default Body;

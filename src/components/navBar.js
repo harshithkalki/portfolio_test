@@ -1,6 +1,9 @@
 import React from 'react'
+import { useScrollRefs } from '../hooks/useScrollRef'
 
-const NavBar = () => {
+const NavBar = ({ handleScroll, refs }) => {
+  const { section1Ref, section2Ref, section3Ref } = refs;
+
   return (
     <div
     style={{
@@ -16,6 +19,7 @@ const NavBar = () => {
     }}
     >
       <ul
+      
       style={{
         display: 'flex',
         listStyleType: 'none',
@@ -29,13 +33,19 @@ const NavBar = () => {
         marginRight: '70px',
       }}
       >
-        <li style={{color: 'black', marginRight: '20px', cursor:"pointer"}}
-        ><a
-        href="https://github.com/SaiPalkonda"
-        style={{textDecoration: 'none', color: 'black'}}
-        >Projects
-          </a></li>
-        <li style={{color: 'black', marginRight: '20px', cursor:"pointer"}}>Contact</li>
+        <li
+        onClick={() => handleScroll(section1Ref)}
+        style={{color: 'black', marginRight: '20px', cursor:"pointer"}}
+        >About</li>
+        <li
+        onClick={() => handleScroll(section2Ref)}
+        style={{color: 'black', marginRight: '20px', cursor:"pointer"}}
+        >Experience</li>
+
+        <li
+        onClick={() => handleScroll(section3Ref)}
+        style={{color: 'black', marginRight: '20px', cursor:"pointer"}}
+        >Projects</li>
       </ul>
         
     </div>
