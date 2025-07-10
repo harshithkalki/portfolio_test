@@ -1,5 +1,4 @@
 import React from 'react'
-import { useScrollRefs } from '../hooks/useScrollRef'
 
 const NavBar = ({ handleScroll, refs }) => {
   const { section1Ref, section2Ref, section3Ref } = refs;
